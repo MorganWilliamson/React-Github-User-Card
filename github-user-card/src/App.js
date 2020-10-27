@@ -15,11 +15,11 @@ class App extends React.Component {
 
   //axios
   fetchUsers = () => { 
-    axios.get(`URL`)
+    axios.get(`https://api.github.com/users/morganwilliamson`)
       .then((res) => {
         console.log(res);
         this.setState({
-          users: res.data.data
+          users: [...this.state.users, res.data]
         });
       })
       .catch(error => console.log(error))
