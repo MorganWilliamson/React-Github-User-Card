@@ -14,8 +14,8 @@ class App extends React.Component {
   };
 
   //axios
-  fetchUsers = ( 
-    axios.get(`https://api.github.com/users/morganwilliamson`)
+  fetchUsers = () => { 
+    axios.get(`URL`)
       .then((res) => {
         console.log(res);
         this.setState({
@@ -23,9 +23,12 @@ class App extends React.Component {
         });
       })
       .catch(error => console.log(error))
-  );
+    };
 
   //"componentDidMount"
+  componentDidMount() {
+    this.fetchUsers();
+  }
 
   //helper?
   
@@ -40,3 +43,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+// URL: https://api.github.com/users/morganwilliamson
