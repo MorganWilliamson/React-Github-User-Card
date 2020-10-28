@@ -47,10 +47,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <p>Github User Card</p>
+        <h1>Github User Card</h1>
+        
+        <div className="CC">
         <CardForm users={this.state.users} />
+        </div>
       </div>
-    );
+    )
   }
 }
 
