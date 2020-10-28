@@ -13,7 +13,8 @@ class Card extends React.Component {
                 />
                 <div className="cardInfo">
                     <h2>{this.props.user.name}</h2>
-                    <p>{this.props.user.login}</p>
+                    <p>Username: {this.props.user.login}</p>
+                    <p>Location: {this.props.user.location}</p>
                     <p>Followers: {this.props.user.followers}</p>
                     <p>Bio: {this.props.user.bio}</p>
                 </div>
