@@ -14,16 +14,28 @@ class App extends React.Component {
   };
 
   //axios
-  fetchUsers = () => { 
-    axios.get(`https://api.github.com/users/morganwilliamson`)
-      .then((res) => {
-        console.log(res);
-        this.setState({
-          users: [...this.state.users, res.data]
-        });
-      })
-      .catch(error => console.log(error))
+    fetchUsers = () => {
+      axios.get(`https://api.github.com/users/morganwilliamson`)
+        .then((res) => {
+          console.log(res);
+          this.setState({
+            users: [...this.state.users, res.data]
+          });
+        })
+        .catch(error => console.log(error))
     };
+
+  // fetchUsers = async () => { 
+  //   const res = await axios.get(`https://api.github.com/users/morganwilliamson`)
+  //   const response = await axios.get(res.data.followers_url);
+  //   const results = await Promise.all(
+  //     response.data.map(follower => {
+  //       return axios.get(follower.url);
+  //     })
+  //   );
+  //   const resultData = results.map(result => result.data);
+  //   this.setState({ users: [...this.state.users, res.data, ...resultData] });
+  // };
 
   //"componentDidMount"
   componentDidMount() {
@@ -35,7 +47,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <p>Github User Card!</p>
+        <p>Github User Card</p>
         <CardForm users={this.state.users} />
       </div>
     );
@@ -45,3 +57,4 @@ class App extends React.Component {
 export default App;
 
 // URL: https://api.github.com/users/morganwilliamson
+// Followers URL: https://api.github.com/users/morganwilliamson/followers

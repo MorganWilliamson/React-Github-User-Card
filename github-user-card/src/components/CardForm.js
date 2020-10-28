@@ -8,7 +8,7 @@ class CardForm extends React.Component {
         return( 
             <div className="cardForm">
                 {this.props.users.map(user => (
-                    <Card key={user.id} user={user}/>
+                    <Card key={user.id} user={user} />
                 ))}
             </div>
         )
